@@ -1,0 +1,81 @@
+<div class="card">
+<div class="container mt-4">
+    <div>
+        <h2>Ajouter Un Formateur :</h2>
+    </div>
+    <form [formGroup]="formformateur" (ngSubmit)="submit()">
+    <div class="card-body">
+        <div class="col-md-6">
+            <fieldset class="form-group">
+                <label >Nom : </label>
+                <input type="text" class="form-control " id="nom"  placeholder="Entrer Votre Nom" formControlName="nom"
+                [ngClass]="{'is-invalid': submitted && formformateur.get('nom').invalid,'is-valid': submitted && !formformateur.get('nom').invalid}">
+            </fieldset>
+            <small *ngIf="formformateur.get('nom').hasError('required') && formformateur.get('nom').touched" class="text-danger">
+                Nom invalide
+            </small>
+            <div *ngIf=" submitted &&(formformateur.get('nom').invalid )" class="invalid-tooltip">
+                Nom invalide
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <fieldset class="form-group">
+                <label >Prénom : </label>
+                <input type="text" class="form-control " id="prenom"  placeholder="Entrer Votre Prénom" formControlName="prenom"
+                [ngClass]="{'is-invalid': submitted && formformateur.get('prenom').invalid,'is-valid': submitted && !formformateur.get('prenom').invalid}">
+            </fieldset>
+            <small *ngIf="formformateur.get('prenom').hasError('required') && formformateur.get('prenom').touched" class="text-danger">
+                Prénom invalide
+            </small>
+            <div *ngIf=" submitted && (formformateur.get('prenom').invalid )" class="invalid-tooltip">
+                Prénom invalide
+            </div>
+        </div>
+        <div class="col-md-6">
+            <fieldset class="form-group">
+                <label >E-mail : </label>
+                <input type="text" class="form-control " id="mail"  placeholder="Entrer Votre @mail" formControlName="mail"
+                [ngClass]="{'is-invalid': submitted && formformateur.get('mail').invalid,'is-valid': submitted && !formformateur.get('mail').invalid}">
+            </fieldset>
+            <small *ngIf="formformateur.get('mail').hasError('required') && formformateur.get('mail').touched" class="text-danger">
+                E-mail Invalide
+            </small>
+            <div *ngIf="submitted && (formformateur.get('mail').invalid)" class="invalid-tooltip">
+                E-mail Invalide
+            </div>
+        </div>
+        <div class="col-md-6">
+            <fieldset class="form-group">
+                <label >N° Télèphone : </label>
+                <input type="text" class="form-control " id="tel"  placeholder="Enter Votre Num-Tel " formControlName="tel"
+                [ngClass]="{'is-invalid': submitted && formformateur.get('tel').invalid,'is-valid': submitted && !formformateur.get('tel').invalid}">
+            </fieldset>
+            <small *ngIf="formformateur.get('tel').hasError('required') && formformateur.get('nom').touched" class="text-danger">
+                Num-Tel invalide
+            </small>
+            <div *ngIf=" submitted &&(formformateur.get('tel').invalid)" class="invalid-tooltip">
+                Num-Tel invalide
+            </div>
+        </div>
+        <div class="col-md-6">
+            <fieldset class="form-group">
+                <label >Adresse</label>
+                <input type="text" class="form-control" id="adresse"  placeholder="Entrer Votre Adresse" formControlName="adresse"
+                [ngClass]="{'is-invalid': submitted && formformateur.get('adresse').invalid,'is-valid': submitted && !formformateur.get('adresse').invalid}">
+            </fieldset>
+            <small *ngIf="formformateur.get('adresse').hasError('required') && formformateur.get('adresse').touched" class="text-danger">
+                Adresse Invalide
+            </small>
+            <div *ngIf=" submitted &&(formformateur.get('adresse').invalid)" class="invalid-tooltip">
+                Adresse Invalide
+            </div>
+        </div>
+        <div class="mt-2 col-md-6">
+            <tr><button type="submit" class="btn btn-custom-boutton">Ajouter</button><td></td><button type="reset" class="btn btn-custom-boutton">Annuler</button></tr>
+
+        </div>        
+    </div>
+    </form>
+</div>
+</div>

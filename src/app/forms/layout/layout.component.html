@@ -1,0 +1,68 @@
+
+<section id="ngx-datatable-basic">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="card-header text-center">
+              <h1 style="font-size: 32px;color: #140c3b;text-align: center;font-family:Adamina;font-weight:400;font-style:normal" class="vc_custom_heading vc_custom_1560413271805">Liste Des Formateurs</h1>
+              <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="229" height="45" src="https://www.ise-college-lycee.com/wp-content/uploads/2019/06/iselogoiconseparateur.png" class="vc_single_image-img attachment-full" alt="iselogoiconseparateur-college-lycee">
+            </div>
+            
+            
+            <ngx-datatable [rows]="tab_form" [rowHeight]="50" class="bootstrap core-bootstrap mt-4" [limit]="10"
+              [columnMode]="ColumnMode.force" [headerHeight]="50" [footerHeight]="50" [scrollbarH]="true">
+
+              <ngx-datatable-column name="CodeF" prop="id" [width]="50">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.id }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Nom" prop="nom" [width]="150">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.nom }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Prénom" prop="prenom" [width]="150">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.prenom }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="E-mail" prop="mail" [width]="200">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.mail }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="N° Téléphone" prop="tel" [width]="150">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.tel }}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Addresse" prop="adresse" [width]="200">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  {{ row.adresse}}
+                </ng-template>
+              </ngx-datatable-column>
+              <ngx-datatable-column name="Actions" [width]="70">
+                <ng-template let-row="row" ngx-datatable-cell-template>
+                  <i class="fa fa-trash text-danger cursor-pointer mr-2" (click)="deleteFormateur(row.id)"></i>
+                  <i class="ft-edit text-success cursor-pointer" (click)="updateFormateur(row.id)"></i>
+                </ng-template>
+              </ngx-datatable-column>
+            </ngx-datatable>
+            <div class="mt-2 col-md-6 custom-align-right" >
+              <tr><button type="submit" class="btn btn-custom-boutton " (click)="addFormateur()">Ajouter Un Formateur</button>
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+

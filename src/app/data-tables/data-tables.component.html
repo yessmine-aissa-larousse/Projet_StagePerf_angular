@@ -1,0 +1,144 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card-content">
+        
+      <div class="card">
+        <div class="card-header text-center">
+          <h1 style="font-size: 32px;color: #140c3b;text-align: center;font-family:Adamina;font-weight:400;font-style:normal" class="vc_custom_heading vc_custom_1560413271805">Consultation D'un Formateur <br> Paiement-Absance </h1>
+          <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="229" height="45" src="https://www.ise-college-lycee.com/wp-content/uploads/2019/06/iselogoiconseparateur.png" class="vc_single_image-img attachment-full" alt="iselogoiconseparateur-college-lycee"></div>        </div>
+        
+        <div class="card-body">
+          <form [formGroup]="form" class="d-flex flex-column align-items-center" (ngSubmit)="submit()">
+            <!-- Consulter Par -->
+            <div class="form-group d-flex justify-content-around mb-4" >
+              <label class="form-check-label" style="font-size: 15px;">
+                Si tu peux choisir une période spécifique :
+              </label><td><p></p></td>
+              <!--<div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="color-radio" id="color-radio-semaine" checked>
+                <label class="form-check-label" for="color-radio-semaine"style="font-size: 14px;">Semaine</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="color-radio" id="color-radio-moins">
+                <label class="form-check-label" for="color-radio-moins" style="font-size: 14px;">Autre</label>
+              </div>-->
+            </div>
+
+            <!-- Première ligne -->
+            <div class="form-group d-flex justify-content-between mb-4" >
+              <div class="mr-3 col-md-5">
+                <label style="font-size: 15px;">Date Début :</label>
+                <div class="input-group">
+                  <input class="form-control " placeholder="yyyy-mm-dd" name="debut" ngbDatepicker #d="ngbDatepicker" formControlName="debutSemaine">
+                  <div class="input-group-append">
+                    <div class="input-group-text" (click)="d.toggle()" >
+                      <i class="fa fa-calendar" style="cursor: pointer;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mr-3 col-md-5" >
+                <label  style="font-size: 15px;">Date Fin :</label>
+                <div class="input-group ">
+                  <input class="form-control" placeholder="yyyy-mm-dd" name="fin" ngbDatepicker #f="ngbDatepicker" formControlName="finSemaine">
+                  <div class="input-group-append">
+                    <div class="input-group-text" (click)="f.toggle()" >
+                      <i class="fa fa-calendar" style="cursor: pointer;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--<div class="mr-3 col-md-5">
+                <label  style="font-size: 15px;">Choisir Un Formateur :</label>
+                <ng-select [items]="formateurs" placeholder="Sélectionnez un formateur" formControlName="selectedFormateur">
+                </ng-select>
+              </div>-->
+            </div>
+
+            <!-- Deuxième ligne -->
+            <div class="form-group d-flex justify-content-between mb-4 col-md-5">
+              <div class="mr-3 col-md-7 ">
+                <label  style="font-size: 15px;">Choisir Un Formateur :</label>
+                <ng-select [items]="formateurs" bindLabel="fullName"  (change)="NameSelected($event)" formControlName="selectedFormateur" placeholder="Sélectionnez un formateur">
+                </ng-select>
+                <div *ngIf="form.get('selectedFormateur').hasError('required') && (form.get('selectedFormateur').dirty || form.get('selectedFormateur').touched)" class="text-danger">
+                  <span style="color: red;">Le formateur est obligatoire.</span>
+                </div>
+              </div>
+              <!-- Bouton Consulter -->
+              <div class="mt-4 col-md-7">
+                <button type="submit" class="btn btn-custom-boutton" >Consulter</button>
+              </div>
+            </div>
+          </form>
+          <!--datatable-->
+          <!--<pre>{{ tab_form | json }}</pre>-->
+        <ngx-datatable [rows]="tab_form" [rowHeight]="'50px'" class="bootstrap core-bootstrap" [limit]="10"
+            [columnMode]="ColumnMode.force" [headerHeight]="50" [footerHeight]="50" [scrollbarH]="true" [columns]="columns">
+
+         <ngx-datatable-column name="Date" prop="date_jour" [width]="50">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{ row.date_jour | date: 'dd/MM/yyyy' }}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Classe" [width]="50" prop="idcl">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{ row.idcl }}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Salle" [width]="50" prop="idsl">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{ row.idsl }}
+            </ng-template>
+          </ngx-datatable-column>
+        <ngx-datatable-column name="Nombre Heures" prop="nombreHeures" [width]="50">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row.nombreHeures }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="coût(H)" prop="coutParHeure" [width]="50">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+              {{ row.coutParHeure }}
+          </ng-template>
+       </ngx-datatable-column>
+       <ngx-datatable-column name="Totale " prop="totalPrix" [width]="50">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{ row.totalPrix }}
+          </ng-template>
+       </ngx-datatable-column>
+       <ngx-datatable-column name="Gest_Abs" [width]="50">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+            <input type="checkbox" [(ngModel)]="row.checkboxChecked" (change)="row.updatePrixTotal()" />
+        </ng-template>
+    </ngx-datatable-column>
+      </ngx-datatable>
+      <div class=" text-center">
+      <h1 style="font-size: 20px;
+        color: #170935;text-align: center;
+        font-family:Adamina;
+        font-weight:400;
+        font-style:normal" 
+        class="vc_custom_heading vc_custom_1560413271805">
+        Totale de paiement :
+      </h1>
+      <div>
+        <p>{{ prixTotal }} DT</p>
+      </div>
+      
+      
+
+      
+        
+            
+           
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

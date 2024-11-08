@@ -1,0 +1,159 @@
+<div class="card">
+  <div class="card-header text-center">
+    <h1 style="font-size: 32px;color: #140c3b;text-align: center;font-family:Adamina;font-weight:400;font-style:normal" class="vc_custom_heading vc_custom_1560413271805">Bienvenue à l’ISE – Collège &amp; Lycée </h1>
+    <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="229" height="45" src="https://www.ise-college-lycee.com/wp-content/uploads/2019/06/iselogoiconseparateur.png" class="vc_single_image-img attachment-full" alt="iselogoiconseparateur-college-lycee"></div>
+    <h1 style="font-size: 20px;color: #0d023d;text-align: center;font-family:Adamina;font-weight:400;font-style:normal" class="vc_custom_heading vc_custom_1560413271805">- Les derniers statistiques 2023/2024 -</h1>
+<div class="row mt-4" (resized)="onResized($event)">
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card bg-info bg-lighten-3">
+      <div class="card-content">
+        <div class="card-body py-0">
+          <div class="media">
+            <div class="media-body info text-left">
+              <h3 class="font-large-1 info mb-0">{{nombreFormateurs}}</h3>
+              <span>Nombres De Formateurs</span>
+            </div>
+            <div class="media-right info text-right">
+              <i class="ft-percent font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-line-chart" class="WidgetlineChart WidgetlineChartShadow mb-3">
+          <x-chartist class="height-75" [data]="WidgetlineChart.data" [type]="WidgetlineChart.type"
+            [options]="WidgetlineChart.options" [responsiveOptions]="WidgetlineChart.responsiveOptions"
+            [events]="WidgetlineChart.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card bg-warning bg-lighten-3">
+      <div class="card-content">
+        <div class="card-body py-0">
+          <div class="media">
+            <div class="media-body warning text-left">
+              <h3 class="font-large-1 warning mb-0">1500</h3>
+              <span>Nombres Des Elèves</span>
+            </div>
+            <div class="media-right warning text-right">
+              <i class="ft-activity font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-line-chart2" class="WidgetlineChart1 WidgetlineChart1Shadow mb-3">
+          <x-chartist class="height-75" [data]="WidgetlineChart1.data" [type]="WidgetlineChart1.type"
+            [options]="WidgetlineChart1.options" [responsiveOptions]="WidgetlineChart1.responsiveOptions"
+            [events]="WidgetlineChart1.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card bg-info bg-lighten-3">
+      <div class="card-content">
+        <div class="card-body py-0">
+          <div class="media">
+            <div class="media-body info text-left">
+              <h3 class="font-large-1 info  mb-0">{{nombreAdmins}}</h3>
+              <span>Nombres Des administrateurs</span>
+            </div>
+            <div class="media-right info text-right">
+              <i class="ft-trending-up font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-line-chart" class="WidgetlineChart WidgetlineChartShadow mb-3">
+          <x-chartist class="height-75" [data]="WidgetlineChart2.data" [type]="WidgetlineChart2.type"
+            [options]="WidgetlineChart2.options" [responsiveOptions]="WidgetlineChart2.responsiveOptions"
+            [events]="WidgetlineChart2.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card bg-warning bg-lighten-3">
+      <div class="card-content">
+        <div class="card-body py-0">
+          <div class="media">
+            <div class="media-body warning text-left">
+              <h3 class="font-large-1 warning mb-0">7, 8, 9, 1, 2, 3, 4</h3>
+              <span>Les Niveaus</span>
+            </div>
+            <div class="media-right warning  text-right">
+              <i class="ft-credit-card font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-line-chart2" class="WidgetlineChart1 WidgetlineChart1Shadow mb-3">
+          <x-chartist class="height-75" [data]="WidgetlineChart3.data" [type]="WidgetlineChart3.type"
+            [options]="WidgetlineChart3.options" [responsiveOptions]="WidgetlineChart3.responsiveOptions"
+            [events]="WidgetlineChart3.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="row mb-3 match-height">
+  <div class="col-xl-6 col-lg-12">
+    <div class="card">
+      <div class="card-header pb-0">
+        <h4 class="card-title">Statistiques</h4>
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <div class="chart-info mb-2">
+            <span class="mr-3">
+              <i class="fa fa-circle info font-small-2 mr-1"></i>
+              <span>Profits</span>
+            </span>
+            <span>
+              <i class="fa fa-circle success font-small-2 mr-1"></i>
+              <span>Croissance</span>
+            </span>
+          </div>
+          <div id="line-chart2" class="lineChart2 lineChart2Shadow">
+            <x-chartist class="height-350" [data]="lineChart2.data" [type]="lineChart2.type"
+              [options]="lineChart2.options" [responsiveOptions]="lineChart2.responsiveOptions"
+              [events]="lineChart2.events">
+            </x-chartist>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-6 col-lg-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">Gains</h4>
+        <span class="grey">2023 - 2024</span>
+      </div>
+      <div class="card-content">
+        <div class="card-body">
+          <div class="earning-details mb-3">
+            <h2 class="mb-1">
+              <span>4295.360000 Dt</span>
+              <i class="ft-arrow-up success font-medium-3"></i>
+            </h2>
+            <span class="font-medium-1 grey">Total des gains</span>
+          </div>
+          <div id="Widget-line-chart2" class="WidgetlineChartEarning WidgetlineChartEarningShadow">
+            <x-chartist class="height-100" [data]="WidgetlineChartEarning.data" [type]="WidgetlineChartEarning.type"
+              [options]="WidgetlineChartEarning.options" [responsiveOptions]="WidgetlineChartEarning.responsiveOptions"
+              [events]="WidgetlineChartEarning.events">
+            </x-chartist>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

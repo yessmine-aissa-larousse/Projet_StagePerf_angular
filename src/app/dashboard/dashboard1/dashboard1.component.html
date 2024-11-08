@@ -1,0 +1,98 @@
+<div class="card">
+  <div class="card-header text-center">
+    <h1 style="font-size: 32px;color: #feb50e;text-align: center;font-family:Adamina;font-weight:400;font-style:normal" class="vc_custom_heading vc_custom_1560413271805">Bienvenue à l’ISE – Collège &amp; Lycée </h1>
+    <div class="vc_single_image-wrapper   vc_box_border_grey"><img width="229" height="45" src="https://www.ise-college-lycee.com/wp-content/uploads/2019/06/iselogoiconseparateur.png" class="vc_single_image-img attachment-full" alt="iselogoiconseparateur-college-lycee"></div>
+<!--Statistics cards Starts-->
+<div class="row" (resized)="onResized($event)">
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card gradient-purple-love">
+      <div class="card-content">
+        <div class="card-body ">
+          <div class="media pb-1">
+            <div class="media-body white text-left">
+              <span>Nombre De Formateurs </span>
+              <h3 class="font-large-1 white mb-0">{{nombreFormateurs}}</h3>
+            </div>
+            <div class="media-right white text-right">
+              <i class="ft-activity font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-line-chart" class=" WidgetlineChart WidgetlineChartshadow mb-2">
+					<x-chartist class="height-75" [data]="WidgetlineChart.data" [type]="WidgetlineChart.type" [options]="WidgetlineChart.options" [responsiveOptions]="WidgetlineChart.responsiveOptions"
+					 [events]="WidgetlineChart.events">
+					</x-chartist>
+				</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card gradient-ibiza-sunset">
+      <div class="card-content">
+        <div class="card-body ">
+          <div class="media pb-1">
+            <div class="media-body white text-left">
+              <span>Nombre Des Elèves</span>
+              <h3 class="font-large-1 white mb-0">$</h3>
+            </div>
+            <div class="media-right white text-right">
+              <i class="ft-percent font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-line-chart" class="WidgetlineChart WidgetlineChartshadow mb-2">
+					<x-chartist class="height-75" [data]="WidgetlineChart1.data" [type]="WidgetlineChart1.type" [options]="WidgetlineChart1.options" [responsiveOptions]="WidgetlineChart1.responsiveOptions"
+					 [events]="WidgetlineChart1.events">
+					</x-chartist>
+				</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card gradient-mint">
+      <div class="card-content">
+        <div class="card-body ">
+          <div class="media pb-1">
+            <div class="media-body white text-left">
+              <span>Nombres Des Etudients </span>
+              <h3 class="font-large-1 white mb-0">45,668</h3>
+            </div>
+            <div class="media-right white text-right">
+              <i class="ft-trending-up font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-line-chart" class="WidgetlineChart WidgetlineChartshadow mb-2">
+					<x-chartist class="height-75" [data]="WidgetlineChart2.data" [type]="WidgetlineChart2.type" [options]="WidgetlineChart2.options" [responsiveOptions]="WidgetlineChart2.responsiveOptions"
+					 [events]="WidgetlineChart2.events">
+					</x-chartist>
+				</div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6 col-md-6 col-12">
+    <div class="card gradient-king-yna">
+      <div class="card-content">
+        <div class="card-body ">
+          <div class="media pb-1">
+            <div class="media-body white text-left">
+              <span>Nombres Des administrateurs</span>
+              <h3 class="font-large-1 white mb-0">32,454</h3>
+            </div>
+            <div class="media-right white text-right">
+              <i class="ft-credit-card font-large-1"></i>
+            </div>
+          </div>
+        </div>
+        <div id="Widget-line-chart" class="WidgetlineChart WidgetlineChartshadow mb-2">
+					<x-chartist class="height-75" [data]="WidgetlineChart3.data" [type]="WidgetlineChart3.type" [options]="WidgetlineChart3.options" [responsiveOptions]="WidgetlineChart3.responsiveOptions"
+					 [events]="WidgetlineChart3.events">
+					</x-chartist>
+				</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Statistics cards Ends-->
+</div>

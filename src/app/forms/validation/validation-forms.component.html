@@ -1,0 +1,42 @@
+<div class="card">
+  <div class="container mt-4">
+    <div>
+      <h2>  Modifier Un Formateur :  </h2>
+    </div>
+    <form [formGroup]="formFormateur" (ngSubmit)="submit()">
+    <div class="card-body">
+      
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >Nom : </label>
+        <input type="text" class="form-control" id="nom"  formControlName="nom"
+               [ngClass]="{'is-invalid': submitted && formFormateur.get('nom').invalid, 'is-valid': submitted && !formFormateur.get('nom').invalid}">
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Prénom : </label>
+        <input type="text" class="form-control" id="prenom"  formControlName="prenom"
+               [ngClass]="{'is-invalid': submitted && formFormateur.get('prenom').invalid, 'is-valid': submitted && !formFormateur.get('prenom').invalid}">
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>E-Mail : </label>
+        <input type="email" class="form-control" id="mail"  formControlName="mail"
+               [ngClass]="{'is-invalid': submitted && formFormateur.get('mail').invalid, 'is-valid': submitted && !formFormateur.get('mail').invalid}">
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>N° Télèphone : </label>
+        <input type="tel" class="form-control" id="tel"  formControlName="tel"
+               [ngClass]="{'is-invalid': submitted && formFormateur.get('tel').invalid, 'is-valid': submitted && !formFormateur.get('tel').invalid}">
+      </div>
+      <div class="col-sm-4 col-md-4 col-lg-4">
+        <label>Adresse :</label>
+        <input type="text" class="form-control" id="adresse" formControlName="adresse"
+               [ngClass]="{'is-invalid': submitted && formFormateur.get('adresse').invalid, 'is-valid': submitted && !formFormateur.get('adresse').invalid}">
+      </div>
+      
+
+      <div class="mt-2">
+        <button type="submit" class="btn btn-custom-boutton">Modifier</button>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
